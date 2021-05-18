@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soft_AEATE", "Soft_AEATE.csproj", "{9DC506D3-26D3-4C87-A8CE-4ABC36BF631B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DC506D3-26D3-4C87-A8CE-4ABC36BF631B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC506D3-26D3-4C87-A8CE-4ABC36BF631B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC506D3-26D3-4C87-A8CE-4ABC36BF631B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC506D3-26D3-4C87-A8CE-4ABC36BF631B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3817E55A-B403-4FAD-9112-D040AB7A480B}
+	EndGlobalSection
+EndGlobal
