@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_AEATE.Codes
 {
-    public class Employee : People
+    public class Employee : User
     {
         public int Expereance { get; set; }
 

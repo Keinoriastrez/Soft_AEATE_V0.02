@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Soft_AEATE.Codes.Employee">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Order">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAEAAAAASAAAAAAAACAgAAAAAAAAA=</HashCode>
+      <FileName>Codes\Order.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Soft_AEATE.Codes.User">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAEAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Product">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAQAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Depot">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAEBAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\Depot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Client">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAIAAAAAA=</HashCode>
+      <FileName>Codes\Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Clothes">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>Codes\Clothes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Food">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Furniture">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Codes\Furniture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Stationary">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Codes\Stationary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.Codes.Technics">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Codes\Technics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Soft_AEATE.Codes.IOrder">
+    <Position X="13" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAEAAAAASAAAAAAAACAgAAAAAAAAA=</HashCode>
+      <FileName>Codes\IOrder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

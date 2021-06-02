@@ -19,15 +19,12 @@ namespace Soft_AEATE
         {
             InitializeComponent();
 
-            
-
             label1.Text = "Ім'я";
             label2.Text = "Адреса";
             label3.Text = "Возраст";
             label4.Text = "Гендер";
             label5.Text = "Досвід";
             label6.Text = "Зарплата";
-
             label7.Text = "Робочі";
 
             addRowBut.Text = "Finish";

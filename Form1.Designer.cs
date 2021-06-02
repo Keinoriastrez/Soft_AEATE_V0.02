@@ -58,7 +58,7 @@ namespace Soft_AEATE
             this.company});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(779, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(686, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,7 +182,7 @@ namespace Soft_AEATE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 536);
+            this.ClientSize = new System.Drawing.Size(686, 501);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.clearButt);
             this.Controls.Add(this.dataGridView1);

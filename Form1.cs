@@ -18,18 +18,8 @@ namespace Soft_AEATE
         {
             InitializeComponent();
 
-            //TestTex.Text = Chad.Name + " Salary is " +  Chad.Salary;
 
         }
-
-        //public Form1(Employee employee)
-        //{
-
-        //    InitEmployeeData(employee);
-
-        //    dataGridView1.Visible = true;
-
-        //}
 
         public void InitEmployeeData(Employee Chad)
         {
@@ -90,9 +80,22 @@ namespace Soft_AEATE
 
         private void Purchases_Click(object sender, EventArgs e)
         {
-           
+            Food ananas = new (100, 300, "Ананас", "Selo", 1035, "2000.13.12", "Kavai");
+            Food banana = new (50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
+            Food shrek = new(2000, 1000, "Шрек", "Ниггерия", 1035, "2000.13.12", "Kavai");
 
-        }
+            //Product[] product = new []
+            //{
+            //    banana,
+            //    ananas,
+            //    shrek
+
+            //};
+
+            List<Product> products = new List<Product> { banana, ananas, shrek };
+
+            InitProductData(products);
+        } 
 
         private void Main_Click(object sender, EventArgs e)
         {
@@ -121,5 +124,34 @@ namespace Soft_AEATE
             f2.ShowDialog();
 
         }
+
+
+        public void InitProductData(List<Product> product)
+        {
+            // Create an unbound DataGridView by declaring a column count.
+            
+            dataGridView1.ColumnCount = 5;
+            dataGridView1.ColumnHeadersVisible = true;
+
+            // Set the column header style.
+            DataGridViewCellStyle columnHeaderStyle = new()
+            {
+                BackColor = Color.Beige,
+                Font = new Font("Verdana", 10, FontStyle.Bold)
+            };
+            dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            // Set the column header names.
+            dataGridView1.Columns[0].Name = "Назва";
+            dataGridView1.Columns[1].Name = "Ціна";
+            dataGridView1.Columns[2].Name = "Вага";
+            dataGridView1.Columns[3].Name = "Кількість";
+            dataGridView1.Columns[4].Name = "Виробник";
+
+            product.ForEach(x => dataGridView1.Rows.Add(x.Name, x.Price.ToString(), x.Weight.ToString(), x.Amount.ToString(), x.Manufactures));
+
+            dataGridView1.Visible = true;
+        }
+    
     }
 }
