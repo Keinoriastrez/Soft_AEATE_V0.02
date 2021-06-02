@@ -33,7 +33,7 @@ namespace Soft_AEATE
 
         private void AddRowBut_Click(object sender, EventArgs e)
         {
-            Form1 main = this.Owner as Form1;
+            MainForm main = this.Owner as MainForm;
             Employee employer = new();
 
             employer.Name = textBox1.Text;

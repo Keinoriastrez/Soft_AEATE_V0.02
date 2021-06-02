@@ -11,13 +11,14 @@ using Soft_AEATE.Codes;
 
 namespace Soft_AEATE
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public Employee employee = new();
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-
+           //  AuthorizationForm form = new();
+           // form.ShowDialog();
 
         }
 
@@ -92,7 +93,7 @@ namespace Soft_AEATE
 
             //};
 
-            List<Product> products = new List<Product> { banana, ananas, shrek };
+            List<Product> products = new() { banana, ananas, shrek };
 
             InitProductData(products);
         } 
