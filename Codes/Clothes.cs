@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_AEATE.Codes
 {
-    class Clothes : Product
+    class Clothes : Products
     {
 
         public string Color { get; set; }

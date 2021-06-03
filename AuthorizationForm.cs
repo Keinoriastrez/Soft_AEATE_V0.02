@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Soft_AEATE
 {
@@ -20,6 +21,8 @@ namespace Soft_AEATE
             label2.Text = "Ім'я користувача";
             label3.Text = "Пароль";
         }
+
+
 
         private void AuthButt_Click(object sender, EventArgs e)
         {

@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Soft_AEATE.Codes;
+using MySql.Data.MySqlClient;
+
 
 namespace Soft_AEATE
 {
     public partial class MainForm : Form
     {
         public Employee employee = new();
+        //List<Products> product = new();
         public MainForm()
         {
             InitializeComponent();
-           //  AuthorizationForm form = new();
-           // form.ShowDialog();
+            //  AuthorizationForm form = new();
+            // form.ShowDialog();
 
         }
 
@@ -57,9 +60,9 @@ namespace Soft_AEATE
 
         private void EmployeeStrip_Click(object sender, EventArgs e)
         {
-            Employee Chad = new ("Чад", "GayBar12Street", 25, "Dancer", 15, 1591);
+            Employee Chad = new("Чад", "GayBar12Street", 25, "Dancer", 15, 1591);
 
-            Employee Andrei = new ("Andrii", "GayBar12Street", 25, "Dancer", 15, 1591);
+            Employee Andrei = new("Andrii", "GayBar12Street", 25, "Dancer", 15, 1591);
 
             InitEmployeeData(Chad);
 
@@ -81,22 +84,18 @@ namespace Soft_AEATE
 
         private void Purchases_Click(object sender, EventArgs e)
         {
-            Food ananas = new (100, 300, "Ананас", "Selo", 1035, "2000.13.12", "Kavai");
-            Food banana = new (50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
+            var prod = new Products();
+
+            Food ananas = new(100, 300, "Ананас", "Selo", 1035, "2000.13.12", "Kavai");
+            Food banana = new(50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
             Food shrek = new(2000, 1000, "Шрек", "Ниггерия", 1035, "2000.13.12", "Kavai");
 
-            //Product[] product = new []
-            //{
-            //    banana,
-            //    ananas,
-            //    shrek
+            List<Products> products = new() { banana, ananas, shrek };
 
-            //};
+            ProductData(products);
 
-            List<Product> products = new() { banana, ananas, shrek };
-
-            InitProductData(products);
-        } 
+            prod.InitProductData(products, dataGridView1);
+        }
 
         private void Main_Click(object sender, EventArgs e)
         {
@@ -127,32 +126,50 @@ namespace Soft_AEATE
         }
 
 
-        public void InitProductData(List<Product> product)
+        string connString = "server=localhost;user=root;database=aethe;password=1111;";
+
+        public void ProductData(List<Products> product)
         {
-            // Create an unbound DataGridView by declaring a column count.
             
-            dataGridView1.ColumnCount = 5;
-            dataGridView1.ColumnHeadersVisible = true;
 
-            // Set the column header style.
-            DataGridViewCellStyle columnHeaderStyle = new()
+            using (MySqlConnection connection = new MySqlConnection(connString))
             {
-                BackColor = Color.Beige,
-                Font = new Font("Verdana", 10, FontStyle.Bold)
-            };
-            dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                try
+                {
+                    connection.Open();
 
-            // Set the column header names.
-            dataGridView1.Columns[0].Name = "Назва";
-            dataGridView1.Columns[1].Name = "Ціна";
-            dataGridView1.Columns[2].Name = "Вага";
-            dataGridView1.Columns[3].Name = "Кількість";
-            dataGridView1.Columns[4].Name = "Виробник";
+                    string sql = "SELECT * FROM product";
+                    var command = new MySqlCommand(sql, connection);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
 
-            product.ForEach(x => dataGridView1.Rows.Add(x.Name, x.Price.ToString(), x.Weight.ToString(), x.Amount.ToString(), x.Manufactures));
+                            product.Add(new Products(Convert.ToString(reader["ID"]), Convert.ToInt32(reader["Amount"]),
+                            Convert.ToSingle(reader["Price"]), Convert.ToSingle(reader["Weight"]), Convert.ToString(reader["Name"]),
+                            Convert.ToString(reader["Manufactures"])));
 
-            dataGridView1.Visible = true;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+                // закриваємо конект
+                connection.Close();
+                // звільнюємо ресурси
+                connection.Dispose();
+
+            }
+
         }
-    
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

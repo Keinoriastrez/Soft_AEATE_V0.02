@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_AEATE.Codes
 {
-    class Food : Product
+    class Food : Products
     {
 
         public string ExpirationDate { get; set; }

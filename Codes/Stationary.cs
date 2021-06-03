@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soft_AEATE.Codes
 {
-    class Stationary : Product
+    class Stationary : Products
     {
 
         public string Material { get; set; }

@@ -50,6 +50,7 @@ namespace Soft_AEATE
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.main,
@@ -58,7 +59,7 @@ namespace Soft_AEATE
             this.company});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(686, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(613, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,7 +127,7 @@ namespace Soft_AEATE
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 108);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(573, 255);
@@ -182,7 +183,8 @@ namespace Soft_AEATE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 501);
+            this.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
+            this.ClientSize = new System.Drawing.Size(613, 454);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.clearButt);
             this.Controls.Add(this.dataGridView1);
@@ -194,6 +196,7 @@ namespace Soft_AEATE
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "AEATE";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
