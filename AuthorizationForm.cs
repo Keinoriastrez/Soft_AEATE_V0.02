@@ -20,26 +20,25 @@ namespace Soft_AEATE
             label1.Text = "Авторизація";
             label2.Text = "Ім'я користувача";
             label3.Text = "Пароль";
+            authButt.Text = "Ввести";
         }
 
-
+       
 
         private void AuthButt_Click(object sender, EventArgs e)
         {
 
-            bool pass, username;
+            string pass, username;
             try
             {
-                if (textBox1.Text == "Admin") username = true;
-                else username = false;
-                if (textBox2.Text == "1111") pass = true;
-                else pass = false;
-                if (username == true && pass == true) Bull = true;
+                username = textBox1.Text;
+                pass = textBox2.Text;
+                AuthData(pass, username);
             }
             catch (Exception error)
             {
 
-                MessageBox.Show("Перевірте правильність вказанних даних", error.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(error.ToString(), "Перевірте правильність вказанних даних", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             if (Bull == true)
@@ -48,5 +47,75 @@ namespace Soft_AEATE
             }
 
         }
+
+
+        public void AuthData(string password, string username)
+        {
+            string connString = "server=localhost;user=root;database=aethe;password=root;";
+
+            bool apass = false, auser = false;
+
+            using (var connection = new MySqlConnection(connString))
+            {
+                try
+                {
+
+                    connection.Open();
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                string sql = "SELECT * FROM user_auth WHERE Password = '" + password + "' ";
+                string sql2 = "SELECT * FROM user_auth WHERE Login = '" + username + "' ";
+
+                var command = new MySqlCommand(sql, connection);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["Password"] is not null)
+                        {
+                            if (password == reader["Password"].ToString()) apass = true;
+                            else apass = false;
+                        }
+
+                    }
+
+
+                }
+
+
+                command = new MySqlCommand(sql2, connection);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["Login"] is not null)
+                        {
+                            if (username == reader["Login"].ToString()) auser = true;
+                            else auser = false;
+                        }
+
+                    }
+
+
+                }
+
+                // закриваємо конект
+                connection.Close();
+
+                // звільнюємо ресурси
+                connection.Dispose();
+
+                if (apass == true && auser == true) Bull = true;
+            }
+
+        }
+
     }
 }
