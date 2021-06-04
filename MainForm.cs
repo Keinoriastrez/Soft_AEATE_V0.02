@@ -20,8 +20,8 @@ namespace Soft_AEATE
         public MainForm()
         {
             InitializeComponent();
-            //  AuthorizationForm form = new();
-            // form.ShowDialog();
+            AuthorizationForm form = new();
+            form.ShowDialog();
 
         }
 
@@ -60,9 +60,9 @@ namespace Soft_AEATE
 
         private void EmployeeStrip_Click(object sender, EventArgs e)
         {
-            Employee Chad = new("Чад", "GayBar12Street", 25, "Dancer", 15, 1591);
+            Employee Chad = new("Чад", "GrayBar12Street", 25, "Dancer", 15, 1591);
 
-            Employee Andrei = new("Andrii", "GayBar12Street", 25, "Dancer", 15, 1591);
+            Employee Andrei = new("Andrii", "GrayBar12Street", 25, "Dancer", 15, 1591);
 
             InitEmployeeData(Chad);
 
@@ -92,9 +92,10 @@ namespace Soft_AEATE
 
             List<Products> products = new() { banana, ananas, shrek };
 
-            ProductData(products);
+            //ProductData(products);
 
             prod.InitProductData(products, dataGridView1);
+
         }
 
         private void Main_Click(object sender, EventArgs e)
@@ -110,6 +111,7 @@ namespace Soft_AEATE
 
 
         }
+
         private void Company_Click(object sender, EventArgs e)
         {
 
@@ -126,13 +128,13 @@ namespace Soft_AEATE
         }
 
 
-        string connString = "server=localhost;user=root;database=aethe;password=1111;";
+       
 
         public void ProductData(List<Products> product)
         {
-            
+            string connString = "server=localhost;user=root;database=aethe;password=root;";
 
-            using (MySqlConnection connection = new MySqlConnection(connString))
+            using (var connection = new MySqlConnection(connString))
             {
                 try
                 {

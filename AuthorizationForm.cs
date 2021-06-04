@@ -22,19 +22,72 @@ namespace Soft_AEATE
             label3.Text = "Пароль";
         }
 
+        public void AuthData(string password, string username)
+        {
+            string connString = "server=localhost;user=root;database=aethe;password=root;";
 
+            bool apass = false, auser = false;
+
+            using (var connection = new MySqlConnection(connString))
+            {
+                try
+                {
+                    connection.Open();
+                   
+                    string sql = "SELECT 1 FROM auth WHERE unique_key =" + password;
+                    string sql2 = "SELECT 1 FROM auth WHERE unique_key =" + username;
+
+                    var command = new MySqlCommand(sql, connection);
+                    
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        if (password == reader["password"].ToString()) apass = true;
+                        else apass = false;
+                        
+                    }
+                    
+
+                    command = new MySqlCommand(sql2, connection);
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        if (username == reader["username"].ToString()) auser = true;
+                        else auser = false;
+
+
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                // закриваємо конект
+                connection.Close();
+                // звільнюємо ресурси
+                connection.Dispose();
+
+                if (apass == true && auser == true) Bull = true; 
+            }
+
+        }
 
         private void AuthButt_Click(object sender, EventArgs e)
         {
 
-            bool pass, username;
+            string pass, username;
             try
             {
-                if (textBox1.Text == "Admin") username = true;
-                else username = false;
-                if (textBox2.Text == "1111") pass = true;
-                else pass = false;
-                if (username == true && pass == true) Bull = true;
+                username = textBox1.Text;
+                pass = textBox2.Text;
+                AuthData(pass, username);
+                //if (textBox1.Text == "Admin") username = true;
+                //else username = false;
+                //if (textBox2.Text == "1111") pass = true;
+                //else pass = false;
+                //if (username == true && pass == true) Bull = true;
             }
             catch (Exception error)
             {
@@ -46,7 +99,7 @@ namespace Soft_AEATE
             {
                 Close();
             }
-
+            
         }
     }
 }
