@@ -25,6 +25,10 @@ namespace Soft_AEATE
 
         }
 
+        //Food ananas = new(100, 300, "Ананас", "Selo", 1035, "2000.13.12", "Kavai");
+
+        //Food shrek = new(2000, 1000, "Шрек", "Ниггерия", 1035, "2000.13.12", "Kavai");
+
         public void InitEmployeeData(Employee Chad)
         {
             // Create an unbound DataGridView by declaring a column count.
@@ -60,19 +64,16 @@ namespace Soft_AEATE
 
         private void EmployeeStrip_Click(object sender, EventArgs e)
         {
-            Employee Chad = new("Чад", "GrayBar12Street", 25, "Dancer", 15, 1591);
+            Employee Chad = new("Чад", "GrayBar12Street", 25, "Dancer", 15, 159, "Gay", 1591);
 
-            Employee Andrei = new("Andrii", "GrayBar12Street", 25, "Dancer", 15, 1591);
+            //Employee Andrei = new("Andrii", "GrayBar12Street", 25, "Dancer", 15, 1591);
 
             InitEmployeeData(Chad);
-
-            InitEmployeeData(Andrei);
 
             dataGridView1.Visible = true;
 
             employeeStrip.Visible = false;
         }
-
 
         private void ClearButt_Click(object sender, EventArgs e)
         {
@@ -84,17 +85,26 @@ namespace Soft_AEATE
 
         private void Purchases_Click(object sender, EventArgs e)
         {
-            var prod = new Products();
 
-            Food ananas = new(100, 300, "Ананас", "Selo", 1035, "2000.13.12", "Kavai");
             Food banana = new(50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
-            Food shrek = new(2000, 1000, "Шрек", "Ниггерия", 1035, "2000.13.12", "Kavai");
 
-            List<Products> products = new() { banana, ananas, shrek };
+            Food ananas = new(100, 300, "Ананас", "Selor", 1035, "2000.13.12", "Pico");
 
-            //ProductData(products);
+            var products = new List<Products>() { banana };
 
-            prod.InitProductData(products, dataGridView1);
+            ProductData(products);
+
+            products[0].InitProductData(products, dataGridView1);
+
+        }
+
+        private void SalaryStrip_Click(object sender, EventArgs e)
+        {
+
+            var payFormView = new PayFormView();
+
+            payFormView.ShowDialog();
+
 
         }
 
@@ -116,7 +126,6 @@ namespace Soft_AEATE
         {
 
 
-
         }
 
         private void ButtonAdd_Click(object sender, EventArgs e)
@@ -126,9 +135,6 @@ namespace Soft_AEATE
             f2.ShowDialog();
 
         }
-
-
-       
 
         public void ProductData(List<Products> product)
         {
@@ -147,9 +153,9 @@ namespace Soft_AEATE
                         while (reader.Read())
                         {
 
-                            product.Add(new Products(Convert.ToString(reader["ID"]), Convert.ToInt32(reader["Amount"]),
-                            Convert.ToSingle(reader["Price"]), Convert.ToSingle(reader["Weight"]), Convert.ToString(reader["Name"]),
-                            Convert.ToString(reader["Manufactures"])));
+                            product.Add(new Products(reader["ID"].ToString(), Convert.ToInt32(reader["Amount"]),
+                            Convert.ToSingle(reader["Price"]), Convert.ToSingle(reader["Weight"]), reader["Name"].ToString(),
+                            reader["Manufactures"].ToString()));
 
                         }
                     }
@@ -158,7 +164,7 @@ namespace Soft_AEATE
                 {
                     MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
                 // закриваємо конект
                 connection.Close();
                 // звільнюємо ресурси
@@ -167,7 +173,6 @@ namespace Soft_AEATE
             }
 
         }
-
 
         private void MainForm_Load(object sender, EventArgs e)
         {

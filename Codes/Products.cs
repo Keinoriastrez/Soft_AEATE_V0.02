@@ -11,6 +11,7 @@ namespace Soft_AEATE.Codes
      public class Products
      {
         public string ID { get; set; }
+
         public int Amount { get; set; }
 
         public float Price { get; set; }

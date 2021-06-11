@@ -166,6 +166,7 @@ namespace Soft_AEATE
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
             this.ClientSize = new System.Drawing.Size(374, 358);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox6);
@@ -182,10 +183,11 @@ namespace Soft_AEATE
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddRowForm";
-            this.Text = "AddRowForm";
+            this.Text = "Форма введення даних";
             this.ResumeLayout(false);
             this.PerformLayout();
 

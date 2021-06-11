@@ -10,7 +10,7 @@ namespace Soft_AEATE.Codes
     {
         public string Phone { get; set; }
 
-        public string Cumpany { get; set; }
+        public string Company { get; set; }
 
         public string Currensy { get; set; }
 

@@ -58,7 +58,9 @@ namespace Soft_AEATE.Codes
                 }
 
                 string sql = "SELECT * FROM user_auth WHERE Password = '" + password + "' ";
+
                 string sql2 = "SELECT * FROM user_auth WHERE Login = '" + username + "' ";
+
                 #region Перевірка данних
                 var command = new MySqlCommand(sql, connection);
 

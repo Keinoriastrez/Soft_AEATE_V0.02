@@ -1,0 +1,9 @@
+﻿// This file is used by Code Analysis to maintain SuppressMessage
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given
+// a specific target and scoped to a namespace, type, member, etc.
+
+using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Performance", "CA1822:Пометьте члены как статические", Justification = "<Ожидание>", Scope = "member", Target = "~M:Soft_AEATE.Codes.Employee.CulcPay(Soft_AEATE.Codes.Employee)~System.Double")]
+[assembly: SuppressMessage("Performance", "CA1822:Пометьте члены как статические", Justification = "<Ожидание>", Scope = "member", Target = "~M:Soft_AEATE.MainForm.ProductData(System.Collections.Generic.List{Soft_AEATE.Codes.Products})")]

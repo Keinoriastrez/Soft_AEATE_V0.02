@@ -29,7 +29,6 @@ namespace Soft_AEATE
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.main = new System.Windows.Forms.ToolStripMenuItem();
             this.purchases = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,7 @@ namespace Soft_AEATE
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.salaryStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@ namespace Soft_AEATE
             this.company});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(613, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(625, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,7 +109,8 @@ namespace Soft_AEATE
             // 
             this.company.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.company.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeStrip});
+            this.employeeStrip,
+            this.salaryStrip});
             this.company.Name = "company";
             this.company.Size = new System.Drawing.Size(122, 25);
             this.company.Text = "Підприємство";
@@ -118,7 +119,7 @@ namespace Soft_AEATE
             // employeeStrip
             // 
             this.employeeStrip.Name = "employeeStrip";
-            this.employeeStrip.Size = new System.Drawing.Size(129, 26);
+            this.employeeStrip.Size = new System.Drawing.Size(139, 26);
             this.employeeStrip.Text = "Робочі";
             this.employeeStrip.Click += new System.EventHandler(this.EmployeeStrip_Click);
             // 
@@ -179,18 +180,24 @@ namespace Soft_AEATE
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
+            // salaryStrip
+            // 
+            this.salaryStrip.Name = "salaryStrip";
+            this.salaryStrip.Size = new System.Drawing.Size(139, 26);
+            this.salaryStrip.Text = "Виплати";
+            this.salaryStrip.Click += new System.EventHandler(this.SalaryStrip_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
-            this.ClientSize = new System.Drawing.Size(613, 454);
+            this.ClientSize = new System.Drawing.Size(625, 454);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.clearButt);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-           
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -221,6 +228,7 @@ namespace Soft_AEATE
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem employeeStrip;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ToolStripMenuItem salaryStrip;
     }
 }
 

@@ -3,7 +3,7 @@
   <Class Name="Soft_AEATE.Codes.Employee">
     <Position X="8.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAgAgEAAABAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Codes\Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -18,15 +18,15 @@
   <Class Name="Soft_AEATE.Codes.User">
     <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAEAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAACAAEAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Codes\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Soft_AEATE.Codes.Product">
+  <Class Name="Soft_AEATE.Codes.Products">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAQAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Codes\Product.cs</FileName>
+      <HashCode>AAgAAAAAAQAAgAEAAAAAAASAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Codes\Products.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Soft_AEATE.Codes.Depot">
@@ -39,7 +39,7 @@
   <Class Name="Soft_AEATE.Codes.Client">
     <Position X="6" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAJAAAAAA=</HashCode>
       <FileName>Codes\Client.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -65,7 +65,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Soft_AEATE.Codes.Stationary">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Codes\Stationary.cs</FileName>
@@ -78,8 +78,36 @@
       <FileName>Codes\Technics.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Soft_AEATE.MainForm" Collapsed="true">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEACAAAAAGAACIMgAKAAiIAEADAAACACgQBBQ=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.AuthorizationForm" Collapsed="true">
+    <Position X="15" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABAAAACAIAACAAAABAAAEAAAAAAAAAA=</HashCode>
+      <FileName>AuthorizationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.PayFormView" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAABAQAACAAAACAAAIAAABEAAAEgAAAAA=</HashCode>
+      <FileName>PayFormView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soft_AEATE.AddRowForm" Collapsed="true">
+    <Position X="13.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAASAAABCAAAKAAABCIAAAAAAAEAAACAAAAAA=</HashCode>
+      <FileName>AddRowForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Soft_AEATE.Codes.IOrder">
-    <Position X="13" Y="2.25" Width="1.5" />
+    <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAEAAAAASAAAAAAAACAgAAAAAAAAA=</HashCode>
       <FileName>Codes\IOrder.cs</FileName>
