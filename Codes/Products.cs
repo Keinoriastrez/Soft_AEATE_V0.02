@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -53,7 +54,43 @@ namespace Soft_AEATE.Codes
             return Price;
 
         }
+        public void ProductData(List<Products> product)
+        {
+            string connString = "server=localhost;user=root;database=aethe;password=root;";
 
+            using (var connection = new MySqlConnection(connString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string sql = "SELECT * FROM product";
+                    var command = new MySqlCommand(sql, connection);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            product.Add(new Products(reader["ID"].ToString(), Convert.ToInt32(reader["Amount"]),
+                            Convert.ToSingle(reader["Price"]), Convert.ToSingle(reader["Weight"]), reader["Name"].ToString(),
+                            reader["Manufactures"].ToString()));
+
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                // закриваємо конект
+                connection.Close();
+                // звільнюємо ресурси
+                connection.Dispose();
+
+            }
+
+        }
         public void InitProductData(List<Products> product, DataGridView dataGridView1)
         {
             // Create an unbound DataGridView by declaring a column count.

@@ -75,26 +75,11 @@ namespace Soft_AEATE
             employeeStrip.Visible = false;
         }
 
-        private void ClearButt_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Columns.Clear();
-            dataGridView1.Rows.Clear();
-            dataGridView1.Visible = false;
-            employeeStrip.Visible = true;
-        }
-
         private void Purchases_Click(object sender, EventArgs e)
         {
+            var orderView = new ViewOrder();
 
-            Food banana = new(50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
-
-            Food ananas = new(100, 300, "Ананас", "Selor", 1035, "2000.13.12", "Pico");
-
-            var products = new List<Products>() { banana };
-
-            ProductData(products);
-
-            products[0].InitProductData(products, dataGridView1);
+            orderView.ShowDialog();
 
         }
 
@@ -110,20 +95,24 @@ namespace Soft_AEATE
 
         private void Main_Click(object sender, EventArgs e)
         {
-
-
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Visible = false;
+            employeeStrip.Visible = true;
 
         }
 
         private void Sales_Click(object sender, EventArgs e)
         {
+            Food banana = new(50, 200, "Банан", "Ниггерия", 1035, "2000.13.12", "Kavai");
 
-            var products = new List<Products>() {  };
+            Food ananas = new(100, 300, "Ананас", "Selor", 1035, "2000.13.12", "Pico");
 
-            ProductData(products);
+            var products = new List<Products>() { banana };
+
+            products[0].ProductData(products);
 
             products[0].InitProductData(products, dataGridView1);
-
 
         }
 
@@ -142,47 +131,10 @@ namespace Soft_AEATE
 
         }
 
-        public void ProductData(List<Products> product)
-        {
-            string connString = "server=localhost;user=root;database=aethe;password=root;";
-
-            using (var connection = new MySqlConnection(connString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string sql = "SELECT * FROM product";
-                    var command = new MySqlCommand(sql, connection);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-
-                            product.Add(new Products(reader["ID"].ToString(), Convert.ToInt32(reader["Amount"]),
-                            Convert.ToSingle(reader["Price"]), Convert.ToSingle(reader["Weight"]), reader["Name"].ToString(),
-                            reader["Manufactures"].ToString()));
-
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString(), "Помилка підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                // закриваємо конект
-                connection.Close();
-                // звільнюємо ресурси
-                connection.Dispose();
-
-            }
-
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

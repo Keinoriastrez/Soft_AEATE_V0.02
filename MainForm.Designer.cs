@@ -32,18 +32,15 @@ namespace Soft_AEATE
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.main = new System.Windows.Forms.ToolStripMenuItem();
             this.purchases = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.sales = new System.Windows.Forms.ToolStripMenuItem();
             this.company = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clearButt = new System.Windows.Forms.Button();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,26 +74,11 @@ namespace Soft_AEATE
             // purchases
             // 
             this.purchases.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.purchases.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
             this.purchases.Name = "purchases";
             this.purchases.Size = new System.Drawing.Size(81, 25);
             this.purchases.Text = "Закупки";
             this.purchases.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.purchases.Click += new System.EventHandler(this.Purchases_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(219, 26);
-            this.toolStripMenuItem4.Text = "toolStripMenuItem4";
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(219, 26);
-            this.toolStripMenuItem5.Text = "toolStripMenuItem5";
             // 
             // sales
             // 
@@ -111,7 +93,8 @@ namespace Soft_AEATE
             this.company.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.company.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.employeeStrip,
-            this.salaryStrip});
+            this.salaryStrip,
+            this.employeeAdd});
             this.company.Name = "company";
             this.company.Size = new System.Drawing.Size(122, 25);
             this.company.Text = "Підприємство";
@@ -120,16 +103,23 @@ namespace Soft_AEATE
             // employeeStrip
             // 
             this.employeeStrip.Name = "employeeStrip";
-            this.employeeStrip.Size = new System.Drawing.Size(139, 26);
+            this.employeeStrip.Size = new System.Drawing.Size(226, 26);
             this.employeeStrip.Text = "Робочі";
             this.employeeStrip.Click += new System.EventHandler(this.EmployeeStrip_Click);
             // 
             // salaryStrip
             // 
             this.salaryStrip.Name = "salaryStrip";
-            this.salaryStrip.Size = new System.Drawing.Size(139, 26);
+            this.salaryStrip.Size = new System.Drawing.Size(226, 26);
             this.salaryStrip.Text = "Виплати";
             this.salaryStrip.Click += new System.EventHandler(this.SalaryStrip_Click);
+            // 
+            // employeeAdd
+            // 
+            this.employeeAdd.Name = "employeeAdd";
+            this.employeeAdd.Size = new System.Drawing.Size(226, 26);
+            this.employeeAdd.Text = "Добавити робітника";
+            this.employeeAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // dataGridView1
             // 
@@ -143,21 +133,6 @@ namespace Soft_AEATE
             this.dataGridView1.Size = new System.Drawing.Size(573, 255);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
-            // 
-            // clearButt
-            // 
-            this.clearButt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.clearButt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.clearButt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.clearButt.FlatAppearance.BorderSize = 0;
-            this.clearButt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.clearButt.Location = new System.Drawing.Point(48, 58);
-            this.clearButt.Name = "clearButt";
-            this.clearButt.Size = new System.Drawing.Size(75, 23);
-            this.clearButt.TabIndex = 3;
-            this.clearButt.Text = "Очистка";
-            this.clearButt.UseVisualStyleBackColor = false;
-            this.clearButt.Click += new System.EventHandler(this.ClearButt_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -177,26 +152,12 @@ namespace Soft_AEATE
             this.toolStripMenuItem3.Size = new System.Drawing.Size(32, 19);
             this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAdd.Location = new System.Drawing.Point(337, 57);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 4;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
             this.ClientSize = new System.Drawing.Size(625, 454);
-            this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.clearButt);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -222,15 +183,12 @@ namespace Soft_AEATE
         private System.Windows.Forms.ToolStripMenuItem company;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem main;
-        private System.Windows.Forms.Button clearButt;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem employeeStrip;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ToolStripMenuItem salaryStrip;
+        private System.Windows.Forms.ToolStripMenuItem employeeAdd;
     }
 }
 

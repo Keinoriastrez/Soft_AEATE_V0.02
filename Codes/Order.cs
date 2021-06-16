@@ -43,6 +43,7 @@ namespace Soft_AEATE.Codes
         {
             double OrPrice;
             OrPrice = Price * Amount;
+            Price = Convert.ToSingle(OrPrice);
             return OrPrice;
 
         }
