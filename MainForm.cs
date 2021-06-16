@@ -20,8 +20,8 @@ namespace Soft_AEATE
         public MainForm()
         {
             InitializeComponent();
-            AuthorizationForm form = new();
-            form.ShowDialog();
+            //AuthorizationForm form = new();
+            //form.ShowDialog();
 
         }
 
@@ -118,12 +118,18 @@ namespace Soft_AEATE
         private void Sales_Click(object sender, EventArgs e)
         {
 
+            var products = new List<Products>() {  };
+
+            ProductData(products);
+
+            products[0].InitProductData(products, dataGridView1);
 
 
         }
 
         private void Company_Click(object sender, EventArgs e)
         {
+
 
 
         }

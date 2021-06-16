@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Soft_AEATE.Codes
 {
-     public class Products
+     public class Products : IOrder
      {
         public string ID { get; set; }
 
@@ -35,6 +35,24 @@ namespace Soft_AEATE.Codes
         }
 
         public Products() { }
+
+        public double GetPrice()
+        {
+            double OrPrice;
+            OrPrice = Price * Amount;
+            return OrPrice;
+
+        }
+        public double Discount()
+        {
+            if (Amount > 120)
+            {
+                this.Price = Price / 2;
+            }
+
+            return Price;
+
+        }
 
         public void InitProductData(List<Products> product, DataGridView dataGridView1)
         {

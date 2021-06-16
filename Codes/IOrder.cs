@@ -12,13 +12,11 @@ namespace Soft_AEATE.Codes
 
         string Name { get; }
 
-        int Price { get; set; }
-
-        string Address { get; }
+        float Price { get; set; }
 
         double GetPrice();
 
-        void Discount();
+        double Discount();
 
 
     }

@@ -37,19 +37,20 @@ namespace Soft_AEATE
             this.sales = new System.Windows.Forms.ToolStripMenuItem();
             this.company = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.clearButt = new System.Windows.Forms.Button();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.salaryStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.menuStrip1.BackgroundImage = global::Soft_AEATE.Properties.Resources._5259fc8c2c6f7;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -123,10 +124,18 @@ namespace Soft_AEATE
             this.employeeStrip.Text = "Робочі";
             this.employeeStrip.Click += new System.EventHandler(this.EmployeeStrip_Click);
             // 
+            // salaryStrip
+            // 
+            this.salaryStrip.Name = "salaryStrip";
+            this.salaryStrip.Size = new System.Drawing.Size(139, 26);
+            this.salaryStrip.Text = "Виплати";
+            this.salaryStrip.Click += new System.EventHandler(this.SalaryStrip_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InfoText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 108);
             this.dataGridView1.Name = "dataGridView1";
@@ -179,13 +188,6 @@ namespace Soft_AEATE
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
-            // 
-            // salaryStrip
-            // 
-            this.salaryStrip.Name = "salaryStrip";
-            this.salaryStrip.Size = new System.Drawing.Size(139, 26);
-            this.salaryStrip.Text = "Виплати";
-            this.salaryStrip.Click += new System.EventHandler(this.SalaryStrip_Click);
             // 
             // MainForm
             // 
